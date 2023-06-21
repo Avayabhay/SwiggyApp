@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 //import { restaurentList } from "../constants";
 import RestaurentCard from "./RestaurentCard";
+import ShimmerUI from "./ShimmerUI";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurents, setRestaurents] = useState([]);
+  const [filteredrestaurents, setFilteredRestaurents] = useState([]);
+  const [allRestaurents, setAllRestaurents] = useState([]);
 
   const filterRestaurents = (text) => {
-    return restaurents.filter((restaurent) =>
-      restaurent.data.name.toLowerCase().includes(text)
+    return allRestaurents.filter((restaurent) =>
+      restaurent?.data?.name?.toLowerCase()?.includes(text.toLowerCase())
     );
   };
 
@@ -23,11 +25,14 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.984048&lng=77.7481552&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    setRestaurents(json.data.cards[2].data.data.cards);
+    setFilteredRestaurents(json.data.cards[2].data.data.cards);
+    setAllRestaurents(json.data.cards[2].data.data.cards);
     console.log(json);
   };
 
-  return (
+  return allRestaurents.length === 0 ? (
+    <ShimmerUI />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -41,21 +46,25 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             const data = filterRestaurents(searchText.toLowerCase());
-            setRestaurents(data);
+            setFilteredRestaurents(data);
           }}
         >
           Search
         </button>{" "}
       </div>
       <div className="restaurent-list">
-        {restaurents.map((restaurent, index) => {
-          return (
-            <RestaurentCard
-              {...restaurent.data}
-              key={restaurent.data?.id + index}
-            />
-          );
-        })}
+        {filteredrestaurents.length === 0 ? (
+          <h1>no results</h1>
+        ) : (
+          filteredrestaurents.map((restaurent, index) => {
+            return (
+              <RestaurentCard
+                {...restaurent.data}
+                key={restaurent.data?.id + index}
+              />
+            );
+          })
+        )}
       </div>
     </>
   );

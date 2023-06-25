@@ -1,7 +1,70 @@
 import React from "react";
 
 function ShimmerUI() {
-  return <h1>Loading...</h1>;
+  return (
+    <>
+      <div className="shimmer-container">
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+
+        <div className="shimmer-card">
+          <div className="shimmer-img"></div>
+          <div className="shimmer-title"></div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default ShimmerUI;

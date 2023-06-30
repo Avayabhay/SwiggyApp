@@ -6,20 +6,11 @@ import Footer from "./Components/Footer";
 function App() {
   return (
     <div className="App">
-      <AppLayout />
-      <div className="body"></div>
-    </div>
-  );
-}
-
-const AppLayout = () => {
-  return (
-    <>
       <Header />
       <Body />
       <Footer />
-    </>
+    </div>
   );
-};
+}
 
 export default App;

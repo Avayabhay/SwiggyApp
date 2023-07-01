@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
+import RestaurentMenu from "./Components/RestaurentMenu";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/restaurent/:id",
+        element: <RestaurentMenu />,
       },
     ],
   },

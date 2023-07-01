@@ -1,23 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import About from "./Components/About";
-import ErrorPage from "./Components/ErrorPage";
+// import App from "./App";
+// import About from "./Components/About";
+// import ErrorPage from "./Components/ErrorPage";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { appRouter } from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

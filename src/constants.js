@@ -4,6 +4,9 @@ export const IMG_CDN_URL =
 export const MENU_IMG_CDN_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.9901989&lng=88.3676061&restaurantId=";
 
+export const MENU_ITEM_FILTER_STRING =
+  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+
 export const restaurentList = [
   {
     type: "restaurant",

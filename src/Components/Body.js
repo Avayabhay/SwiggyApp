@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 //import { restaurentList } from "../constants";
 import RestaurentCard from "./RestaurentCard";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -56,12 +57,14 @@ const Body = () => {
         {filteredrestaurents.length === 0 ? (
           <h1>no results</h1>
         ) : (
-          filteredrestaurents.map((restaurent, index) => {
+          filteredrestaurents.map((restaurent) => {
             return (
-              <RestaurentCard
-                {...restaurent.data}
-                key={restaurent.data?.id + index}
-              />
+              <Link
+                to={"restaurent/" + restaurent.data?.id}
+                key={restaurent.data?.id}
+              >
+                <RestaurentCard {...restaurent.data} />
+              </Link>
             );
           })
         )}

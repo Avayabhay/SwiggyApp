@@ -74,3 +74,15 @@
 }
 
 /* END SHIMMER UI */
+
+/* Restaurent Menu PAGE */
+
+.restaurent-menu {
+  display: flex;
+}
+
+.restaurent-menu img {
+  width: 350px;
+}
+
+/* END Restaurent Menu PAGE */

@@ -5,12 +5,13 @@ import {
   IMG_CDN_URL,
   MENU_ITEM_FILTER_STRING,
 } from "../constants";
+import ShimmerUI from "./ShimmerUI";
 
 const RestaurentMenu = () => {
   const params = useParams();
   //console.log(id);
 
-  const [restaurent, setRestaurent] = useState({});
+  const [restaurent, setRestaurent] = useState(null);
   const [menuItems, setMenuItems] = useState({});
 
   useEffect(() => {
@@ -39,19 +40,23 @@ const RestaurentMenu = () => {
     await setMenuItems(uniqueMenuItems);
   };
 
-  return (
-    <>
-      <div className="restaurent">
+  return !restaurent ? (
+    <ShimmerUI />
+  ) : (
+    <div className="restaurent-menu">
+      <div>
+        <h1>{restaurent.name}</h1>
         <img
           src={IMG_CDN_URL + restaurent.cloudinaryImageId}
           alt="restaurent img"
         />
-        <h1>{restaurent.name}</h1>
+
         <h3>{restaurent.areaName}</h3>
         <h3>{restaurent.costForTwoMessage}</h3>
         <h3>{restaurent.avgRating} Stars</h3>
       </div>
-      <div className="restaurent-menu">
+      <div className="restaurent-menu-items">
+        <h2>MENU</h2>
         <ul>
           {Object.values(menuItems).map((item) => (
             <li key={item.id}>{item.name}</li>
@@ -59,7 +64,7 @@ const RestaurentMenu = () => {
         </ul>
         {console.log(menuItems)}
       </div>
-    </>
+    </div>
   );
 };
 

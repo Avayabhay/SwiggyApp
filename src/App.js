@@ -7,6 +7,7 @@ import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import RestaurentMenu from "./Components/RestaurentMenu";
+import Profile from "./Components/Profile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [{ element: <Profile />, path: "profile" }],
       },
       {
         path: "/contact-us",

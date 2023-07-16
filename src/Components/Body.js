@@ -5,12 +5,18 @@ import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import { filterRestaurents } from "../Utils/helper";
 import useGetAllRestaurents from "../Utils/useGetAllRestaurents";
+import useIsOnline from "../Utils/useIsOnline";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const [allRestaurents, filteredrestaurents, setFilteredRestaurents] =
     useGetAllRestaurents();
+  const isOnline = useIsOnline();
+
+  if (!isOnline) {
+    return <h1 className="">Oops!!! Seems like you're Offline!</h1>;
+  }
 
   return allRestaurents.length === 0 ? (
     <ShimmerUI />

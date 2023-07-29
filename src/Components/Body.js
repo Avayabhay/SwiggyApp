@@ -50,10 +50,11 @@ const Body = () => {
           filteredrestaurents.map((restaurent) => {
             return (
               <Link
-                to={"restaurent/" + restaurent.data?.id}
-                key={restaurent.data?.id}
+                // swiggy API changed from restaurant.data to restaurant.info
+                to={"restaurent/" + restaurent.info?.id}
+                key={restaurent.info?.id}
               >
-                <RestaurentCard {...restaurent.data} />
+                <RestaurentCard {...restaurent.info} />
               </Link>
             );
           })

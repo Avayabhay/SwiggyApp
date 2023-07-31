@@ -21,10 +21,10 @@ const useGetAllRestaurents = () => {
     // setAllRestaurents(json.data.cards[2].data.data.cards);
     // Updating the API as swiggy changed its own
     setFilteredRestaurents(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setAllRestaurents(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(json);
   };

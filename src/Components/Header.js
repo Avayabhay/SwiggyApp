@@ -26,7 +26,7 @@ const Header = () => {
       <div className="nav-items">
         <ul className="flex space-x-10 py-10">
           <li>
-            <Link className="" to="/">
+            <Link className="hover:text-red-900" to="/">
               Home
             </Link>
           </li>

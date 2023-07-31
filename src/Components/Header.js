@@ -21,12 +21,14 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useIsOnline();
   return (
-    <div className="navbar">
+    <div className="">
       <Title />
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="" to="/">
+              Home
+            </Link>
           </li>
           <li>
             <Link to="/about">About Us</Link>

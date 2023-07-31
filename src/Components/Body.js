@@ -18,7 +18,7 @@ const Body = () => {
     return <h1 className="">Oops!!! Seems like you're Offline!</h1>;
   }
 
-  return allRestaurents.length === 0 ? (
+  return allRestaurents?.length === 0 ? (
     <ShimmerUI />
   ) : (
     <div className="bg-purple-100">

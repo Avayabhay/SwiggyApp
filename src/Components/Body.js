@@ -21,9 +21,10 @@ const Body = () => {
   return allRestaurents.length === 0 ? (
     <ShimmerUI />
   ) : (
-    <>
-      <div className="search-container">
+    <div className="bg-purple-100">
+      <div className="search-container p-5 m-2">
         <input
+          className="px-2 shadow-sm mx-2 focus:bg-blue-50"
           type="text"
           placeholder="Search Restaurent"
           value={searchText}
@@ -31,7 +32,7 @@ const Body = () => {
         />
         <button
           type="submit"
-          className="search-btn"
+          className="search-btn px-4 bg-blue-300 rounded-lg shadow-md hover:bg-green-700 hover:text-white"
           onClick={() => {
             const data = filterRestaurents(
               searchText.toLowerCase(),
@@ -43,7 +44,7 @@ const Body = () => {
           Search
         </button>{" "}
       </div>
-      <div className="restaurent-list">
+      <div className="restaurent-list flex flex-wrap px-6 mx-3 justify-center">
         {filteredrestaurents.length === 0 ? (
           <h1>no results</h1>
         ) : (
@@ -60,7 +61,7 @@ const Body = () => {
           })
         )}
       </div>
-    </>
+    </div>
   );
 };
 

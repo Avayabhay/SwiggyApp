@@ -9,10 +9,10 @@ const RestaurentCard = ({
   // const { name, cuisines } = props.restaurant;
   // console.log(name);
   return (
-    <div className="card">
+    <div className="card w-52 p-2 m-2 shadow-md bg-green-50 h-72">
       <img src={IMG_CDN_URL + cloudinaryImageId} alt=" Logo" />
       <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
+      <h3 className="">{cuisines.join(", ")}</h3>
       <p>{lastMileTravelString} minutes away</p>
     </div>
   );

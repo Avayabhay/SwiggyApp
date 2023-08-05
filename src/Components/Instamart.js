@@ -3,7 +3,7 @@ import { useState } from "react";
 const Section = ({ title, description, isVisible, setIsVisible }) => {
   const [isBtnVisible, setIsBtnVisible] = useState(isVisible);
 
-  //console.log(isBtnVisible);
+  console.log(isBtnVisible);
   return (
     <div className="border border-black p-2 m-2 bg-purple-200">
       <h2 className="text-xl ">{title}</h2>

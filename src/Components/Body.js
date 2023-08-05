@@ -45,10 +45,10 @@ const Body = () => {
         </button>{" "}
       </div>
       <div className="restaurent-list flex flex-wrap px-6 mx-3 justify-center">
-        {filteredrestaurents.length === 0 ? (
+        {filteredrestaurents?.length === 0 ? (
           <h1>no results</h1>
         ) : (
-          filteredrestaurents.map((restaurent) => {
+          filteredrestaurents?.map((restaurent) => {
             return (
               <Link
                 // swiggy API changed from restaurant.data to restaurant.info

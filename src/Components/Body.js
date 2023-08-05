@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 //import { restaurentList } from "../constants";
 import RestaurentCard from "./RestaurentCard";
 import ShimmerUI from "./ShimmerUI";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { filterRestaurents } from "../Utils/helper";
 import useGetAllRestaurents from "../Utils/useGetAllRestaurents";
 import useIsOnline from "../Utils/useIsOnline";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -13,6 +14,8 @@ const Body = () => {
   const [allRestaurents, filteredrestaurents, setFilteredRestaurents] =
     useGetAllRestaurents();
   const isOnline = useIsOnline();
+
+  const { user, setUser } = useContext(UserContext);
 
   if (!isOnline) {
     return <h1 className="">Oops!!! Seems like you're Offline!</h1>;
@@ -30,6 +33,7 @@ const Body = () => {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
+
         <button
           type="submit"
           className="search-btn px-4 bg-blue-300 rounded-lg shadow-md hover:bg-green-700 hover:text-white"
@@ -42,7 +46,12 @@ const Body = () => {
           }}
         >
           Search
-        </button>{" "}
+        </button>
+        <input
+          type="text"
+          value={user.name}
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
       </div>
       <div className="restaurent-list flex flex-wrap px-6 mx-3 justify-center">
         {filteredrestaurents?.length === 0 ? (

@@ -7,18 +7,28 @@ import ErrorPage from "./Components/ErrorPage";
 //import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import RestaurentMenu from "./Components/RestaurentMenu";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 //import Instamart from "./Components/Instamart";
 // import Profile from "./Components/Profile";
+import UserContext from "./Utils/UserContext";
 
 const Instamart = lazy(() => import("./Components/Instamart"));
 const About = lazy(() => import("./Components/About"));
 function App() {
+  //Suppose I'm getting use from API which is authenticated in useEffect Hook
+  //After authenticating, we are getting the following data
+  const [user, setUser] = useState({
+    name: "Abhay",
+    email: "abhay.002@gmail.com",
+  });
+
   return (
     <div className="App">
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{ user: user, setUser: setUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 }

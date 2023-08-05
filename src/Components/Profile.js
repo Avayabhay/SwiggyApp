@@ -4,7 +4,8 @@ const Profile = (props) => {
   const [count2, setCount2] = useState(0);
 
   return (
-    <>
+    <div className="bg-blue-200 p-10">
+      <h3 className="bg-blue-300 p-4 my-3">Function Based Component</h3>
       <h2>Hi, This Project is created by {props.name}</h2>
       <div>{count}</div>
       <button onClick={() => setCount(1)}>Click</button>
@@ -17,7 +18,7 @@ const Profile = (props) => {
       >
         Click2
       </button>
-    </>
+    </div>
   );
 };
 

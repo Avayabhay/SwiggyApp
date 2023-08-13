@@ -25,7 +25,7 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="bg-purple-100">
-      <div className="search-container p-5 m-2">
+      <div className="search-container p-5 m-2 flex">
         <input
           className="px-2 shadow-sm mx-2 focus:bg-blue-50"
           type="text"
@@ -48,6 +48,7 @@ const Body = () => {
           Search
         </button>
         <input
+          className="px-3 mx-4"
           type="text"
           value={user.name}
           onChange={(e) => setUser({ ...user, name: e.target.value })}

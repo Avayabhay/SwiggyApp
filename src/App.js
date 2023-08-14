@@ -11,6 +11,8 @@ import { lazy, Suspense, useState } from "react";
 //import Instamart from "./Components/Instamart";
 // import Profile from "./Components/Profile";
 import UserContext from "./Utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./Utils/store";
 
 const Instamart = lazy(() => import("./Components/Instamart"));
 const About = lazy(() => import("./Components/About"));
@@ -23,13 +25,13 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <Provider store={store}>
       <UserContext.Provider value={{ user: user, setUser: setUser }}>
         <Header />
         <Outlet />
         <Footer />
       </UserContext.Provider>
-    </div>
+    </Provider>
   );
 }
 

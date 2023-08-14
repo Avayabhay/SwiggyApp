@@ -11,8 +11,9 @@ const RestaurentMenu = () => {
 
   const [restaurent, menuItems] = useRestaurent(id);
 
-  const handleAddItem = () => {
-    dispatch(addItem("Grapes"));
+  const handleAddItem = (item) => {
+    console.log(item);
+    dispatch(addItem(item));
   };
 
   //Using Dispatch
@@ -20,31 +21,39 @@ const RestaurentMenu = () => {
   return !restaurent ? (
     <ShimmerUI />
   ) : (
-    <div className="restaurent-menu">
-      <div>
-        <h1>{restaurent.name}</h1>
+    <div className="flex bg-blue-100 px-5 m-5">
+      <div className="border-blue-800 bg-gren-100">
+        <h1 className="text-3xl font-bold shadow-md m-5 bg-green-100">
+          {restaurent.name}
+        </h1>
         <img
           src={IMG_CDN_URL + restaurent.cloudinaryImageId}
           alt="restaurent img"
         />
 
-        <h3>{restaurent.areaName}</h3>
-        <h3>{restaurent.costForTwoMessage}</h3>
-        <h3>{restaurent.avgRating} Stars</h3>
+        <h3 className="text-xl font-bold">{restaurent.areaName}</h3>
+        <h3 className="font-bold">{restaurent.costForTwoMessage}</h3>
+        <h3 className=" font-bold">{restaurent.avgRating} Stars</h3>
       </div>
 
-      <button
-        className="p-2 m-4 bg-blue-400 rounded-md"
-        onClick={() => handleAddItem()}
-      >
-        Add Grapes
-      </button>
-
-      <div className="restaurent-menu-items">
-        <h2>MENU</h2>
+      <div className="m-5 p-2 bg-green-100">
+        <h2 className="text-2xl font-bold">MENU</h2>
         <ul>
           {Object.values(menuItems).map((item) => (
-            <li key={item.id}>{item.name}</li>
+            <li
+              key={item.id}
+              className="flex justify-between m-3 bg-green-200 px-4 rounded-sm"
+            >
+              {item.name} -{" "}
+              {
+                <button
+                  className="p-2 m-2 bg-green-500 rounded-md"
+                  onClick={() => handleAddItem(item)}
+                >
+                  Add Item
+                </button>
+              }{" "}
+            </li>
           ))}
         </ul>
         {console.log(menuItems)}

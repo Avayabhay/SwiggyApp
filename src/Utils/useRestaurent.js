@@ -15,7 +15,7 @@ const useRestaurent = (resId) => {
 
     await setRestaurent(dataJSON.data.cards[0].card.card.info);
     let menuItemsInfo =
-      dataJSON.data.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards
+      dataJSON.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
         .map((x) => x.card?.card)
         .filter((x) => x["@type"] === MENU_ITEM_FILTER_STRING)
         .map((x) => x.itemCards)
@@ -23,11 +23,15 @@ const useRestaurent = (resId) => {
         .map((x) => x.card?.info);
 
     const uniqueMenuItems = [];
-    menuItemsInfo.forEach((item) => {
-      if (!uniqueMenuItems.find((x) => x.id === item.id)) {
-        uniqueMenuItems.push(item);
-      }
-    });
+    // console.log(menuItemsInfo);
+    if (menuItemsInfo) {
+      menuItemsInfo.forEach((item) => {
+        if (!uniqueMenuItems.find((x) => x.id === item.id)) {
+          uniqueMenuItems.push(item);
+        }
+      });
+    }
+
     await setMenuItems(uniqueMenuItems);
   };
 

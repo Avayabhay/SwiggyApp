@@ -20,3 +20,29 @@ test("Logo should load on rendering Header", () => {
   //console.log(logo);
   //Check if the logo is present in the Header
 });
+
+test("Status should be Online when page loads", () => {
+  render(
+    <StaticRouter>
+      <Provider store={store}>
+        <Header />
+      </Provider>
+    </StaticRouter>
+  );
+
+  const status = screen.getByTestId("online-status");
+  expect(status.innerHTML).toBe("🟢 online");
+});
+
+test("Cart should have 0-items when page loads", () => {
+  render(
+    <StaticRouter>
+      <Provider store={store}>
+        <Header />
+      </Provider>
+    </StaticRouter>
+  );
+
+  const cart = screen.getByTestId("cart");
+  expect(cart.innerHTML).toBe("Cart - 0 Items ");
+});

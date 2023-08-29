@@ -12,6 +12,7 @@ const Title = () => {
     // </h1>
     <Link to="/">
       <img
+        data-testid="logo"
         className="h-28 px-3 "
         src="https://yt3.googleusercontent.com/CUkoQcVTPQZ3uKR9zPbxhm2eupTRoz2u8WKEXBSCxMAfcI2i5D3AcoG0_CcfJAdnCF9Afyfr=s176-c-k-c0x00ffffff-no-rj"
         alt="swad-anusaar-logo"

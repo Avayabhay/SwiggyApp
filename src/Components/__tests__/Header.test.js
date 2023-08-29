@@ -6,12 +6,13 @@ import { StaticRouter } from "react-router-dom/server";
 
 test("Logo should load on rendering Header", () => {
   //Load Header
-  const { header } = render(
+  const { container } = render(
     <StaticRouter>
       <Provider store={store}>
         <Header />
       </Provider>
     </StaticRouter>
   );
+  console.log(container);
   //Check if the logo is present in the Header
 });

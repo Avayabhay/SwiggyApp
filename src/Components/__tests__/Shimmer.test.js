@@ -25,9 +25,9 @@ test("Load Shimmer on HomePage", () => {
 
   //const searchBTN = screen.getByTestId("search-btn");
   // console.log(searchBTN);
-  // const shimmerCards = screen.getAllByTestId("shimmer-card");
-  const shimmerContainer = screen.getByTestId("shimmer-container");
-  expect(shimmerContainer).toBeInTheDocument();
+  const shimmerCards = screen.getAllByTestId("shimmer-card");
+  // const shimmerContainer = screen.getByTestId("shimmer-container");
+  // expect(shimmerContainer).toBeInTheDocument();
   // console.log(shimmerCards.length);
-  //expect(shimmerCards.length).toBe(15);
+  expect(shimmerCards.length).toBe(15);
 });

@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Body from "../Components/Body";
 import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom/server";
@@ -25,7 +25,20 @@ test("Load Shimmer on HomePage", async () => {
 
   //const searchBTN = screen.getByTestId("search-btn");
   await waitFor(() => expect(screen.getByTestId("search-btn")));
-  const RestaurantList = screen.getByTestId("restaurants-list");
-  expect(RestaurantList.childNodes.length).toBe(20);
-  //const shimmerCards = screen.getAllByTestId("shimmer-card");
+  // const RestaurantList = screen.getByTestId("restaurants-list");
+  // expect(RestaurantList.childNodes.length).toBe(20);
+
+  const searchTextBox = screen.getByTestId("search-text-box");
+  fireEvent.change(searchTextBox, {
+    target: {
+      value: "burger",
+    },
+  });
+
+  const SearchBtn = screen.getByTestId("search-btn");
+  fireEvent.click(SearchBtn);
+
+  const restaurantsList = screen.getByTestId("restaurants-list");
+  // console.log(restaurantsList.childNodes.length);
+  expect(restaurantsList.childNodes.length).toBe(5);
 });

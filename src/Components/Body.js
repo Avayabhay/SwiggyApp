@@ -27,6 +27,7 @@ const Body = () => {
     <div className="bg-purple-100">
       <div className="search-container p-5 m-2 flex">
         <input
+          data-testid="search-text-box"
           className="px-2 shadow-sm mx-2 focus:bg-blue-50"
           type="text"
           placeholder="Search Restaurent"

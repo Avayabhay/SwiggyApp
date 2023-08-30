@@ -25,7 +25,7 @@ test("Load Shimmer on HomePage", async () => {
 
   //const searchBTN = screen.getByTestId("search-btn");
   await waitFor(() => expect(screen.getByTestId("search-btn")));
-  // const shimmer = screen.getByTestId("shimmerCa");
-  // console.log(searchBTN);
+  const RestaurantList = screen.getByTestId("restaurants-list");
+  expect(RestaurantList.childNodes.length).toBe(20);
   //const shimmerCards = screen.getAllByTestId("shimmer-card");
 });

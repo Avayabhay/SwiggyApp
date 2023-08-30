@@ -35,6 +35,7 @@ const Body = () => {
         />
 
         <button
+          data-testid="search-btn"
           type="submit"
           className="search-btn px-4 bg-blue-300 rounded-lg shadow-md hover:bg-green-700 hover:text-white"
           onClick={() => {
@@ -54,7 +55,10 @@ const Body = () => {
           onChange={(e) => setUser({ ...user, name: e.target.value })}
         />
       </div>
-      <div className="restaurent-list flex flex-wrap px-6 mx-3 justify-center">
+      <div
+        data-testid="restaurants-list"
+        className="restaurent-list flex flex-wrap px-6 mx-3 justify-center"
+      >
         {filteredrestaurents?.length === 0 ? (
           <h1>no results</h1>
         ) : (

@@ -5,7 +5,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
     "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
     "jest-environment-jsdom": "^29.6.2",
     "latest-version": "^7.0.0",
@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "jest": "jest --watch"
   },
   "eslintConfig": {
     "extends": [

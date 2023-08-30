@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import Body from "../Body";
+import Body from "../Components/Body";
 import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom/server";
-import store from "../../Utils/store";
-import { RESTAURANT_DATA } from "../../mocks/data";
+import store from "../Utils/store";
+import { RESTAURANT_DATA } from "../mocks/data";
 import "@testing-library/jest-dom";
 
 global.fetch = () => {

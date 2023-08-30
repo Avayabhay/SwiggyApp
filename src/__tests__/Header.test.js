@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import Header from "../Header";
+import Header from "../Components/Header";
 import { Provider } from "react-redux";
-import store from "../../Utils/store";
+import store from "../Utils/store";
 import { StaticRouter } from "react-router-dom/server";
 
 test("Logo should load on rendering Header", () => {

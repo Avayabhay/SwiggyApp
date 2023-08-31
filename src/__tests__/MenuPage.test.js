@@ -27,7 +27,7 @@ test("Add items to cart on Menu Page", async () => {
 
   await waitFor(() => expect(screen.getByTestId("menu")));
 
-  const restaurantMenu = screen.getByTestId("menu");
+  //const restaurantMenu = screen.getByTestId("menu");
   const addBTNs = screen.getAllByTestId("add-btn");
   const cart = screen.getByTestId("cart");
   //console.log(cart.innerHTML);

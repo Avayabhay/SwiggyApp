@@ -14,9 +14,9 @@ const useGetAllRestaurents = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.984048&lng=77.7481552&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(
-      json.data.cards[2].card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // console.log(
+    //   json.data.cards[2].card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     // setFilteredRestaurents(json.data.cards[2].data.data.cards);
     // setAllRestaurents(json.data.cards[2].data.data.cards);
     // Updating the API as swiggy changed its own
@@ -26,7 +26,7 @@ const useGetAllRestaurents = () => {
     setAllRestaurents(
       json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(json);
+    //console.log(json);
   };
 
   return [allRestaurents, filteredrestaurents, setFilteredRestaurents];

@@ -12,7 +12,7 @@ const RestaurentMenu = () => {
   const [restaurent, menuItems] = useRestaurent(id);
 
   const handleAddItem = (item) => {
-    console.log(item);
+    //console.log(item);
     dispatch(addItem(item));
   };
 
@@ -38,7 +38,7 @@ const RestaurentMenu = () => {
 
       <div className="m-5 p-2 bg-green-100">
         <h2 className="text-2xl font-bold">MENU</h2>
-        <ul>
+        <ul data-testid="menu">
           {Object.values(menuItems).map((item) => (
             <li
               key={item.id}
@@ -47,6 +47,7 @@ const RestaurentMenu = () => {
               {item.name} -{" "}
               {
                 <button
+                  data-testid="add-btn"
                   className="p-2 m-2 bg-green-500 rounded-md"
                   onClick={() => handleAddItem(item)}
                 >
@@ -56,7 +57,7 @@ const RestaurentMenu = () => {
             </li>
           ))}
         </ul>
-        {console.log(menuItems)}
+        {/* {console.log(menuItems)} */}
       </div>
     </div>
   );

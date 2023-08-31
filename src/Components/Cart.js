@@ -9,9 +9,9 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleClearCart = () => {
-    console.log("clicked");
+    //console.log("clicked");
     dispatch(clearCart());
-    console.log(cartItems);
+    //console.log(cartItems);
   };
   return (
     <>
